@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="mx-auto">
+        <div class="card-head" style="background-color: black;" >
+            <div class="row">
+                <div class="col mr-auto text-center">                    
+                     <h2 class="col-12" style="color:white;"><strong>Lista producto</strong></h2>                                        
+                </div>                
+            </div>            
+        </div>    
+        <div class="col-auto">
+            <button class="btn btn-outline-primary text-center" (click)="popAgregar()">Agregar producto</button>
+          </div>     
+    </div>
+    <br>
+            <div class="card-body table-responsive-lg">
+                <table class="table table-hover table-lg">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Descuento</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Opciones</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr class="list-gtoup-item-action text-center" *ngFor="let pro of arrayProducto" data-toggle="button" >
+                            <td>$ {{pro.precio_p}}</td>
+                            <td >$ {{pro.descuento_p}}</td>
+                            <td>{{pro.name_p}}</td>
+                            <td>
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <button type="button" class="btn btn-info btn-sm" (click)="edit(pro.id_product)" >
+                                      <i class="far fa-edit">edit</i>
+                                    </button>        
+                                    <button type="button" class="btn btn-danger btn-sm" (click)="delete2(pro.id_product)">
+                                      <i class="far fa-trash-alt">delete</i>
+                                    </button>
+                                  </div>
+                            </td>
+
+                            
+                        </tr>
+                    </tbody>                        
+                </table>
+            </div>
+</div>
